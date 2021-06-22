@@ -45,5 +45,7 @@ int main()
     printf("Hello World!\n");
 
     ConditionalStatement();
+
+    return 0;
 }
 
