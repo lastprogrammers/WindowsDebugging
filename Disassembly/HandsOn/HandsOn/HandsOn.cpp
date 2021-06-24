@@ -3,23 +3,31 @@
 
 #include <iostream>
 
+#ifdef _WIN64
+#error Set to Debug - x86 mode
+#endif
+
+
 void ConditionalStatement()
 {
     int x = 5;
 
     __asm {
+        // if (x == 5)
         cmp x, 5;
         je case_equal;
         jmp case_end;
 
 case_equal:
         mov x, 10;
+        // if (x > 5)
         cmp x, 5;
         ja case_above;
         jmp case_end;
 
 case_above:
         mov x, 1;
+        // if (x < 5)
         cmp x, 5;
         jb case_below;
         jmp case_end;
@@ -31,6 +39,7 @@ case_below:
 case_end:
     std::cout << x << std::endl;
 }
+
 
 int main()
 {
