@@ -1,5 +1,6 @@
-// StackLesson.cpp : Defines the entry point for the console application.
-//
+#if !defined(_DEBUG)
+#error Set to Debug mode
+#endif
 
 #include <iostream>
 

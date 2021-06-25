@@ -1,12 +1,8 @@
-// HandsOn.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
-#include <iostream>
-
-#ifdef _WIN64
-#error Set to Debug - x86 mode
+#if defined(_WIN64) || !defined(_DEBUG)
+#error Set to Debug x86 mode
 #endif
 
+#include <iostream>
 
 void ConditionalStatement()
 {
