@@ -1,10 +1,9 @@
-#if !defined(_DEBUG)
-#error Set to Debug mode
+#if defined(_WIN64) || !defined(_DEBUG)
+#error Set to Debug x86 mode
 #endif
 
 #include <iostream>
 
-#ifndef _WIN64	// Debug - x86
 void NoRetNoParams()
 {
 	unsigned long ulOldEBP = 0;
@@ -100,27 +99,8 @@ public:
 	}
 };
 
-#else	// Debug - x64
-
-int SecondStackFrame64(int a, int b)
-{
-	char c[100] = {0};
-	printf("SecondStackFrame64 called\n");
-	return 0;
-}
-
-int FirstStackFrame64(int a, int b)
-{
-	char c[10] = {0};
-	printf("FirstStackFrame64 called\n");
-	SecondStackFrame64(a, b);
-	return 0;
-}
-#endif
-
 int main(int argc, char* argv[])
 {
-#ifndef _WIN64	// Debug - x86
 	NoRetNoParams();
 
 	// cdecl calling convention
@@ -135,10 +115,6 @@ int main(int argc, char* argv[])
 	// thiscall calling convention
 	CSampleClass sample;
 	sample.ShowThisCallCallingConvention("thiscall Calling Convention", 'this', 'call');
-#else	// Debug - x64
-	// 64bit stack-frame
-	FirstStackFrame64(1, 2);
-#endif
 
 	return 0;
 }

@@ -22,7 +22,7 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{27813FEA-2BF3-493E-8027-E513E5BD2C2B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>StackLesson</RootNamespace>
+    <RootNamespace>CallingConvention</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -147,7 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="StackLesson.cpp" />
+    <ClCompile Include="CallingConvention.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

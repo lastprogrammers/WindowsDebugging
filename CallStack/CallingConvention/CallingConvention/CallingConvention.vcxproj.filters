@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="StackLesson.cpp">
+    <ClCompile Include="CallingConvention.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
